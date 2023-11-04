@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
 public class DragController : MonoBehaviour
 {
 
-    private bool _isDragActive=false;
+    private bool _isDragActive = false;
 
     private Vector2 _screenPosition;
 
@@ -18,11 +19,19 @@ public class DragController : MonoBehaviour
 
     TextMeshProUGUI textMeshPro;
 
+    List<int> indicesList = new List<int>();
 
+    public List<GameObject> prefabsList;
     void Awake()
     {
+
+        for (int i = 0; i <2; i++)
+        {
+            indicesList.Add(i+1);
+        }
+
         DragController[] controllers = FindObjectsOfType<DragController>();
-        if(controllers.Length> 1)
+        if (controllers.Length > 1)
         {
             Destroy(gameObject);
         }
@@ -38,6 +47,7 @@ public class DragController : MonoBehaviour
     void Start()
     {
         
+
     }
 
 
@@ -45,19 +55,19 @@ public class DragController : MonoBehaviour
     void Update()
     {
 
-        if(_isDragActive && (Input.GetMouseButtonDown (0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended))) 
+        if (_isDragActive && (Input.GetMouseButtonDown(0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)))
         {
             Drop();
             return;
         }
 
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
-            Vector3 mousePos= Input.mousePosition;
-            _screenPosition= new Vector2(mousePos.x, mousePos.y);
+            Vector3 mousePos = Input.mousePosition;
+            _screenPosition = new Vector2(mousePos.x, mousePos.y);
             Drag();
         }
-        else if (Input.touchCount> 0) 
+        else if (Input.touchCount > 0)
         {
             _screenPosition = Input.GetTouch(0).position;
             Drag();
@@ -67,24 +77,24 @@ public class DragController : MonoBehaviour
             return;
         }
 
-        _worldPosition = Camera.main.ScreenToWorldPoint( _screenPosition );
+        _worldPosition = Camera.main.ScreenToWorldPoint(_screenPosition);
 
-        if(!_isDragActive )
+        if (!_isDragActive)
         {
             Drag();
         }
         else
         {
-            RaycastHit2D hit = Physics2D.Raycast(_worldPosition , Vector2.zero);
-            if(hit.collider !=null) 
+            RaycastHit2D hit = Physics2D.Raycast(_worldPosition, Vector2.zero);
+            if (hit.collider != null)
             {
                 Draggable draggables = hit.transform.gameObject.GetComponent<Draggable>();
-               _lastDragged = draggables;
+                _lastDragged = draggables;
                 InitDrag();
 
             }
         }
-        
+
     }
 
     void Drag()
@@ -94,12 +104,12 @@ public class DragController : MonoBehaviour
 
     void InitDrag()
     {
-        _lastDragged.transform.position = new Vector2 (_worldPosition.x, _worldPosition.y);
+        _lastDragged.transform.position = new Vector2(_worldPosition.x, _worldPosition.y);
     }
 
     void Drop()
     {
-        _isDragActive= false;
+        _isDragActive = false;
     }
 
 
@@ -112,4 +122,23 @@ public class DragController : MonoBehaviour
         textMeshPro.text = "News : " + Message;
         Notification.SetActive(true);
     }
+
+    public void DestroyMe(GameObject Caller)
+    {
+        Destroy(Caller);
+    }
+
+
+    private void  Callprafabe()
+    {
+        int randomIndex = Random.Range(0, prefabsList.Count); // Génère un indice aléatoire dans la plage de la liste.
+
+        // Instancie le préfab correspondant à l'indice aléatoire.
+        GameObject spawnedPrefab = Instantiate(prefabsList[randomIndex], transform.position, Quaternion.identity);
+
+        // Supprime l'élément de la liste pour éviter de le réutiliser.
+        prefabsList.RemoveAt(randomIndex);
+
+    }
+
 }

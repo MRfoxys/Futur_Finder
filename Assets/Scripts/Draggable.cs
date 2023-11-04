@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-    [SerializeField] private GameObject ColorBlind_Destroy;
+    [SerializeField] private string Message;
+        
+    private GameObject ColorBlind_Destroy;
 
-    [SerializeField] private GameObject ColorBlind_Keep;
+    private GameObject ColorBlind_Keep;
 
     DragController dragController;
 
@@ -21,6 +23,7 @@ public class Draggable : MonoBehaviour
 
         ColorBlind_Destroy = GameObject.Find("Color_Blind_Destroy");
         ColorBlind_Keep = GameObject.Find("Color_Blind_Keep");
+
 
     }
 
@@ -67,9 +70,9 @@ public class Draggable : MonoBehaviour
             {
                this.gameObject.SetActive(false) ;
 
+                dragController.NewNotification(Message);
 
-               // dragController.NewNotification("Je suis une patate j'aime la terre et si t'est pas content nike toi je veux un message plus long pour plus de test car je suis un bon devs");
-                dragController.NewNotification("Kamoulox");
+                dragController.DestroyMe(this.gameObject);
 
                 return;
             }
@@ -79,14 +82,12 @@ public class Draggable : MonoBehaviour
         {
             if (!dragController.getIsDragActive())
             {
-                //Debug.Log(" on Keep cette element");
                 this.gameObject.SetActive(false);
-                Debug.Log("je me desactive");
+                dragController.DestroyMe(this.gameObject);
 
                 return;
             }
         }
-        Debug.Log("hum tu me touche batar");
 
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -94,16 +95,13 @@ public class Draggable : MonoBehaviour
         if (collision.gameObject.CompareTag("collider_Delete"))
         {
             ColorBlind_Destroy.SetActive(false);
-            Debug.Log("je me desactive 2");
 
         }
         else if(collision.gameObject.CompareTag("collider_keeper"))
         {
             ColorBlind_Keep.SetActive(false);
-            Debug.Log("je me desactive 3");
 
         }
-        //Debug.Log(" on desactive le blind");
     }
 
 
