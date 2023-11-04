@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DragController : MonoBehaviour
@@ -13,6 +14,10 @@ public class DragController : MonoBehaviour
 
     private Draggable _lastDragged;
 
+    GameObject Notification;
+
+    TextMeshProUGUI textMeshPro;
+
 
     void Awake()
     {
@@ -21,6 +26,12 @@ public class DragController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Notification = GameObject.Find("Notification");
+
+        Notification.SetActive(false);
+
+        textMeshPro = Notification.transform.Find("Notif_text").GetComponent<TextMeshProUGUI>();
     }
 
     // Start is called before the first frame update
@@ -44,10 +55,12 @@ public class DragController : MonoBehaviour
         {
             Vector3 mousePos= Input.mousePosition;
             _screenPosition= new Vector2(mousePos.x, mousePos.y);
+            Drag();
         }
         else if (Input.touchCount> 0) 
         {
             _screenPosition = Input.GetTouch(0).position;
+            Drag();
         }
         else
         {
@@ -56,7 +69,7 @@ public class DragController : MonoBehaviour
 
         _worldPosition = Camera.main.ScreenToWorldPoint( _screenPosition );
 
-        if(_isDragActive )
+        if(!_isDragActive )
         {
             Drag();
         }
@@ -87,5 +100,16 @@ public class DragController : MonoBehaviour
     void Drop()
     {
         _isDragActive= false;
+    }
+
+
+    public bool getIsDragActive()
+    { return _isDragActive; }
+
+    public void NewNotification(string Message)
+    {
+        Notification.SetActive(false);
+        textMeshPro.text = "News : " + Message;
+        Notification.SetActive(true);
     }
 }
