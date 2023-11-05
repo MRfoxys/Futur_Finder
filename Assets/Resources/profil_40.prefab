@@ -73,6 +73,10 @@ PrefabInstance:
       value: "Je t'aime de ouf, j'crois que j't'ai dans la peau M\xEAme le matin,
         t'es beau, j'ai r\xEAv\xE9 que de toi"
       objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: isNegative
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Sprite
       value: 

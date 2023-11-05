@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2936496558992358763, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Name
-      value: Profil_template
+      value: profil_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: isNegative
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

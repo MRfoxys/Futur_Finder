@@ -70,7 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: Message
-      value: 
+      value: "Le p\xE8re n'a passe plus dans les chemin\xE9. Il aime trop sa barbe."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: isNegative
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Sprite

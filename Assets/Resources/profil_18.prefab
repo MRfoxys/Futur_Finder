@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: Message
       value: "Toutes les personnes allergiques \xE0 la poussi\xE8re sont mortes"
       objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: isNegative
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c350b39c5ebbcf047bc285ca52a6bdf2, type: 3}
     - target: {fileID: 9124776528704282826, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_text
       value: "Les acariens font la m\xEAme taille que les humains"

@@ -57,6 +57,10 @@ PrefabInstance:
       value: "Les riches deviennent tous 8 fois plus riches. La classe moyenne commence
         \xE0 vendre ses reins pour manger."
       objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: isNegative
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Sprite
       value: 

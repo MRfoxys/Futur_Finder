@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: Message
       value: Les rues sont de plus en plus propres.
       objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: cce3e10c0b988e44ea6f7fde6f065c48, type: 3}
+      propertyPath: isNegative
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5447861209150603074, guid: cce3e10c0b988e44ea6f7fde6f065c48, type: 3}
       propertyPath: m_Sprite
       value: 

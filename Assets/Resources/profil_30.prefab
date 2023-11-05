@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2936496558992358763, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Name
-      value: profil_29
+      value: profil_30
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalScale.x
@@ -71,6 +71,10 @@ PrefabInstance:
     - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: Message
       value: "Le taux d'accidents de la route \xE0 \xE9t\xE9 multipli\xE9 par 12."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: isNegative
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Sprite

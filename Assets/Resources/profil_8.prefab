@@ -54,7 +54,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5318672771817683210, guid: cce3e10c0b988e44ea6f7fde6f065c48, type: 3}
       propertyPath: Message
-      value: "La Terre est tellement surpeupl\xE9e que les gens se marchent dessus."
+      value: "La 3e Guerre Mondiale est d\xE9clar\xE9e, le nombre d'humain s'est
+        divis\xE9 par 3."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318672771817683210, guid: cce3e10c0b988e44ea6f7fde6f065c48, type: 3}
+      propertyPath: isNegative
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9124776528704282826, guid: cce3e10c0b988e44ea6f7fde6f065c48, type: 3}
       propertyPath: m_text
