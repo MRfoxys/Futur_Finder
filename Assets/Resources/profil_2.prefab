@@ -52,17 +52,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: profil_2
       objectReference: {fileID: 0}
+    - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1742754
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.17392342
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.042
+      objectReference: {fileID: 0}
     - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: Message
       value: "Les gens commencent \xE0 mieux s'habiller et moins cher."
       objectReference: {fileID: 0}
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
-      propertyPath: m_Sprite
-      value: 
+      propertyPath: m_Size.x
+      value: 66.26
       objectReference: {fileID: 0}
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: m_Size.y
+      value: 66.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2064b43ef7b6fff498b39e3c342d2159, type: 3}
+    - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9124776528704282826, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_text

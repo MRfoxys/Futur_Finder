@@ -54,19 +54,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.070715
+      value: 1.4901817
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.06918
+      value: 1.4982518
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.097
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: Message
@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0027d6c3ce0a2e444a719aca71b74ed5, type: 3}
+      objectReference: {fileID: 21300000, guid: 20a78439292d891419e9dce95da460a7, type: 3}
     - target: {fileID: 9124776528704282826, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_text
       value: Tuer Gerard Depardieux
