@@ -1827,8 +1827,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -1788}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: -80, y: -1828}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1303441250
 MonoBehaviour:
@@ -1853,8 +1853,8 @@ MonoBehaviour:
   m_text: Merci d'avoir essayer la version d'essaie de "FuturFinder" pour la version
     prenium merci de contacter votre dieu le plus proche.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b5c16a5857fbaff47a4775835b4e8ef3, type: 2}
+  m_sharedMaterial: {fileID: 5247767174210630404, guid: b5c16a5857fbaff47a4775835b4e8ef3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1878,7 +1878,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95
+  m_fontSize: 49.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2064,8 +2064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 684.05}
+  m_AnchoredPosition: {x: -0, y: 49.7}
+  m_SizeDelta: {x: 1536, y: 1293.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352899007
 MonoBehaviour:
@@ -2089,8 +2089,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Recap :'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b5c16a5857fbaff47a4775835b4e8ef3, type: 2}
+  m_sharedMaterial: {fileID: 5247767174210630404, guid: b5c16a5857fbaff47a4775835b4e8ef3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2328,7 +2328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5439d9cf4ef40841bca0c79a8cf2f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpt_Destroy: 2
+  cpt_Destroy: 10
   prefabsList: []
 --- !u!4 &1458889298
 Transform:

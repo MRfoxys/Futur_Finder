@@ -31,7 +31,9 @@ public class DragController : MonoBehaviour
     private GameObject ColorBlind_Keep;
 
 
-    [SerializeField] private int cpt_Destroy = 2;
+    [SerializeField] private int cpt_Destroy;
+
+    private int selected_profil;
 
 
     //Endgame
@@ -193,6 +195,8 @@ public class DragController : MonoBehaviour
 
             // UnityEngine.Debug.Log("random = " + randomIndex);
             UnityEngine.Debug.Log("nb restant = " + cpt_Destroy);
+
+            selected_profil = indicesList[randomIndex];
 
             // Instancie le préfab correspondant à l'indice aléatoire.
             GameObject prefab = Resources.Load(prefabName + indicesList[randomIndex]) as GameObject;
