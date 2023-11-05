@@ -21,11 +21,14 @@ public class Draggable : MonoBehaviour
     {
         dragController = GameObject.Find("Drag_controller").GetComponent<DragController>();
 
-        ColorBlind_Destroy = GameObject.Find("Color_Blind_Destroy");
-        ColorBlind_Keep = GameObject.Find("Color_Blind_Keep");
+        ColorBlind_Destroy = dragController.getBlindDestroy();
+        ColorBlind_Keep = dragController.getBlingdKeep();
 
 
     }
+    
+
+
 
     // Start is called before the first frame update
     void Start()

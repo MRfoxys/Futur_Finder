@@ -21,6 +21,16 @@ public class DragController : MonoBehaviour
 
     List<int> indicesList = new List<int>();
 
+    //private string pre_prefabname = "profil_";
+
+    private string prefabName = "profil_";
+
+    private GameObject ColorBlind_Destroy;
+
+    private GameObject ColorBlind_Keep;
+
+
+
     public List<GameObject> prefabsList;
     void Awake()
     {
@@ -36,17 +46,25 @@ public class DragController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        ColorBlind_Destroy = GameObject.Find("Color_Blind_Destroy");
+        ColorBlind_Keep = GameObject.Find("Color_Blind_Keep");
+
         Notification = GameObject.Find("Notification");
 
         Notification.SetActive(false);
 
         textMeshPro = Notification.transform.Find("Notif_text").GetComponent<TextMeshProUGUI>();
+
+       // tempo_prefab();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ColorBlind_Destroy.SetActive(false);
+        ColorBlind_Keep.SetActive(false);
+
+        tempo_prefab();
 
     }
 
@@ -113,6 +131,17 @@ public class DragController : MonoBehaviour
     }
 
 
+    public GameObject getBlindDestroy()
+    {
+        return ColorBlind_Destroy;
+    }
+
+    public GameObject getBlingdKeep()
+    {
+        return ColorBlind_Keep;
+    }
+
+
     public bool getIsDragActive()
     { return _isDragActive; }
 
@@ -125,19 +154,54 @@ public class DragController : MonoBehaviour
 
     public void DestroyMe(GameObject Caller)
     {
+        tempo_prefab();
         Destroy(Caller);
     }
 
 
-    private void  Callprafabe()
+    private void  Callprefabe()
     {
-        int randomIndex = Random.Range(0, prefabsList.Count); // Génère un indice aléatoire dans la plage de la liste.
+        int randomIndex = Random.Range(0, indicesList.Count); // Génère un indice aléatoire dans la plage de la liste.
 
         // Instancie le préfab correspondant à l'indice aléatoire.
-        GameObject spawnedPrefab = Instantiate(prefabsList[randomIndex], transform.position, Quaternion.identity);
+        GameObject prefab = Resources.Load("Prefab/" + prefabName + indicesList[randomIndex]) as GameObject;
+       // GameObject spawnedPrefab = Instantiate(prefabsList[randomIndex], transform.position, Quaternion.identity);
+
+
 
         // Supprime l'élément de la liste pour éviter de le réutiliser.
         prefabsList.RemoveAt(randomIndex);
+
+
+        if (prefab != null)
+        {
+            // Instanciez le prefab dans la scène
+            Instantiate(prefab, transform.position, transform.rotation);
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Prefab introuvable : " + prefabName + indicesList[randomIndex]);
+        }
+
+    }
+
+
+    private void tempo_prefab()
+    {
+        // GameObject prefab = Resources.Load("Prefab/" + prefabName + "3") as GameObject;
+
+        GameObject prefab = Resources.Load("profil_"+"3") as GameObject;
+
+
+        if (prefab != null)
+        {
+            // Instanciez le prefab dans la scène
+            Instantiate(prefab, new Vector2(0, 1.7f), transform.rotation);
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Prefab introuvable : " + prefabName + "3");
+        }
 
     }
 
