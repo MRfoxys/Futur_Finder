@@ -54,19 +54,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.0424986
+      value: 1.0166277
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.025215
+      value: 1.0244441
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.018
+      value: 0.059
       objectReference: {fileID: 0}
     - target: {fileID: 3059359995187651690, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.038
+      value: -0.039
       objectReference: {fileID: 0}
     - target: {fileID: 5318672771817683210, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: Message
@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 5447861209150603074, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0b7f46d94639d8f448c2772017fb7da4, type: 3}
+      objectReference: {fileID: 21300000, guid: 17d443987f015ee41941d5f7303062f0, type: 3}
     - target: {fileID: 9124776528704282826, guid: fd1146044c9b11749824319bab300fe5, type: 3}
       propertyPath: m_text
       value: "Les imp\xF4ts disparaissent"
