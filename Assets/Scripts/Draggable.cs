@@ -13,14 +13,22 @@ public class Draggable : MonoBehaviour
 
     DragController dragController;
 
-    
+    private Vector2 referenceResolution;
+
+    [SerializeField]private float scaleFactor;
+
+    private Camera main ;
+
+
+    [SerializeField] private bool isNegative= true;
+
 
 
 
     private void Awake()
     {
         dragController = GameObject.Find("Drag_controller").GetComponent<DragController>();
-
+        
         ColorBlind_Destroy = dragController.getBlindDestroy();
         ColorBlind_Keep = dragController.getBlingdKeep();
 
@@ -33,8 +41,21 @@ public class Draggable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        main = Camera.current;
         ColorBlind_Destroy.SetActive(false);
         ColorBlind_Keep.SetActive(false);
+
+
+
+        referenceResolution = new Vector2(1080, 1920);
+        //scaleFactor = 0.3f;
+
+        float widthRatio = Screen.width / referenceResolution.x;
+        float heightRatio = Screen.height / referenceResolution.y;
+        float minRatio = Mathf.Min(widthRatio, heightRatio);
+        transform.localScale = new Vector3(minRatio * scaleFactor, minRatio * scaleFactor, 1f);
+
+
     }
 
     // Update is called once per frame
@@ -73,7 +94,11 @@ public class Draggable : MonoBehaviour
             {
                this.gameObject.SetActive(false) ;
 
-                dragController.NewNotification(Message);
+
+                if(isNegative)
+                {
+                    dragController.NewNotification(Message);
+                }
 
                 dragController.DestroyMe(this.gameObject);
 
@@ -86,6 +111,12 @@ public class Draggable : MonoBehaviour
             if (!dragController.getIsDragActive())
             {
                 this.gameObject.SetActive(false);
+
+                if(!isNegative)
+                {
+                    dragController.NewNotification(Message);
+                }
+
                 dragController.DestroyMe(this.gameObject);
 
                 return;

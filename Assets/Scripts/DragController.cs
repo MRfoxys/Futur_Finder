@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DragController : MonoBehaviour
 {
@@ -30,12 +31,28 @@ public class DragController : MonoBehaviour
     private GameObject ColorBlind_Keep;
 
 
+    [SerializeField] private int cpt_Destroy = 2;
+
+
+    //Endgame
+
+    private GameObject Endgame;
+
+    private GameObject Text_Recap;
+
+    private string recap;
+
+
 
     public List<GameObject> prefabsList;
     void Awake()
     {
+        recap = "Recapitulatif :";
+        Endgame = GameObject.Find("GameEnd");
 
-        for (int i = 0; i <2; i++)
+        Text_Recap = GameObject.Find("Recap");
+
+        for (int i = 0; i <40; i++)
         {
             indicesList.Add(i+1);
         }
@@ -53,9 +70,12 @@ public class DragController : MonoBehaviour
 
         Notification.SetActive(false);
 
+        Endgame.SetActive(false);
+
         textMeshPro = Notification.transform.Find("Notif_text").GetComponent<TextMeshProUGUI>();
 
-       // tempo_prefab();
+        // tempo_prefab();
+        Callprefabe();
     }
 
     // Start is called before the first frame update
@@ -64,7 +84,7 @@ public class DragController : MonoBehaviour
         ColorBlind_Destroy.SetActive(false);
         ColorBlind_Keep.SetActive(false);
 
-        tempo_prefab();
+        //tempo_prefab();
 
     }
 
@@ -150,37 +170,55 @@ public class DragController : MonoBehaviour
         Notification.SetActive(false);
         textMeshPro.text = "News : " + Message;
         Notification.SetActive(true);
+
+        recap = recap + "\n" + Message + "\n";
+
     }
 
     public void DestroyMe(GameObject Caller)
     {
-        tempo_prefab();
+        //tempo_prefab();
+        Callprefabe();
         Destroy(Caller);
     }
 
 
-    private void  Callprefabe()
+    private void Callprefabe()
     {
-        int randomIndex = Random.Range(0, indicesList.Count); // Génère un indice aléatoire dans la plage de la liste.
-
-        // Instancie le préfab correspondant à l'indice aléatoire.
-        GameObject prefab = Resources.Load("Prefab/" + prefabName + indicesList[randomIndex]) as GameObject;
-       // GameObject spawnedPrefab = Instantiate(prefabsList[randomIndex], transform.position, Quaternion.identity);
-
-
-
-        // Supprime l'élément de la liste pour éviter de le réutiliser.
-        prefabsList.RemoveAt(randomIndex);
-
-
-        if (prefab != null)
+        if(cpt_Destroy>0)
         {
-            // Instanciez le prefab dans la scène
-            Instantiate(prefab, transform.position, transform.rotation);
+           // UnityEngine.Debug.Log("count list =" + indicesList.Count);
+
+           int randomIndex = Random.Range(0, indicesList.Count-1); // Génère un indice aléatoire dans la plage de la liste.
+
+            // UnityEngine.Debug.Log("random = " + randomIndex);
+            UnityEngine.Debug.Log("nb restant = " + cpt_Destroy);
+
+            // Instancie le préfab correspondant à l'indice aléatoire.
+            GameObject prefab = Resources.Load(prefabName + indicesList[randomIndex]) as GameObject;
+            // GameObject spawnedPrefab = Instantiate(prefabsList[randomIndex], transform.position, Quaternion.identity);
+
+
+
+            // Supprime l'élément de la liste pour éviter de le réutiliser.
+            indicesList.RemoveAt(randomIndex);
+
+
+            if (prefab != null)
+            {
+                // Instanciez le prefab dans la scène
+                Instantiate(prefab, new Vector2(0, 1f), transform.rotation);
+                cpt_Destroy--;
+            }
+            else
+            {
+                UnityEngine.Debug.LogError("Prefab introuvable : " + prefabName + indicesList[randomIndex]);
+            }
         }
         else
         {
-            UnityEngine.Debug.LogError("Prefab introuvable : " + prefabName + indicesList[randomIndex]);
+            Text_Recap.GetComponent<TextMeshProUGUI>().text = recap;
+            Endgame.SetActive(true);
         }
 
     }
@@ -203,6 +241,13 @@ public class DragController : MonoBehaviour
             UnityEngine.Debug.LogError("Prefab introuvable : " + prefabName + "3");
         }
 
+    }
+
+
+    public void Restart()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
 }

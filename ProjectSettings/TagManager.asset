@@ -55,3 +55,6 @@ TagManager:
   - name: Blind
     uniqueID: 864172497
     locked: 0
+  - name: EndGame
+    uniqueID: 2170814985
+    locked: 0
